@@ -6,14 +6,18 @@ output: github_document
 
 This is my solution to HW1.  
 
-```{r}
+```{r setup, include= false}
 library(tidyverse)
 ```
 
 
 ## Problem 1
 
-Create a data frame with specified elements.
+Create a data frame comprised of:
+-a random sample of size 10 from a standard Normal distribution
+-a logical vector indicating whether elements of the sample are greater than 0
+-a character vector of length 10
+-a factor vector of length 10, with 3 different factor “levels”.
 
 ```{r}
 prob1_df = 
@@ -31,6 +35,15 @@ mean(pull(prob1_df, samp))
 mean(pull(prob1_df, samp_gt_0))
 mean(pull(prob1_df, char_vec))
 mean(pull(prob1_df, factor_vec))
+```
+
+I was able to take the means of the numeric and logical vectors, but was unable to take the mean of the factor and character vectors. I was able to take the mean of the logical variable because R converted "TRUE" and "FALSE" values to 0s and 1s before calculating a mean. 
+
+```{r}
+as.numeric(pull(prob1_df, samp))
+as.numeric(pull(prob1_df, samp_gt_0))
+as.numeric(pull(prob1_df, char_vec))
+as.numeric(pull(prob1_df, factor_vec))
 ```
 
 
