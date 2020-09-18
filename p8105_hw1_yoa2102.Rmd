@@ -13,6 +13,7 @@ library(tidyverse)
 
 ## Problem 1
 
+#### Creating a data frame
 Create a data frame comprised of: a random sample of size 10 from a standard Normal distribution,
 a logical vector indicating whether elements of the sample are greater than 0, a character vector of length 10, and a factor vector of length 10 (with 3 different factor “levels”).
 
@@ -26,6 +27,7 @@ prob1_df =
   )
 ```
 
+#### Means of variables in the data frame
 Take the mean of each variable in the data frame.
 ```{r mean}
 mean(pull(prob1_df, samp))
@@ -36,7 +38,7 @@ mean(pull(prob1_df, factor_vec))
 
 Note that R is able to take the means of the numeric and logical vectors, but was unable to take the mean of the factor and character vectors. In the case of the logical vector, R converted "TRUE" and "FALSE" values to 0s and 1s before calculating a mean. 
 
-
+#### Converting data frame vectors to numeric
 Apply as.numeric function to the logical, character, and factor vectors.  
 ```{r converting_to_numeric, eval = FALSE}
 as.numeric(pull(prob1_df, samp))
@@ -45,6 +47,8 @@ as.numeric(pull(prob1_df, char_vec))
 as.numeric(pull(prob1_df, factor_vec))
 ```
 
+
+#### Converting data frame vectors to logical and multiplying
 Convert the the logical vector to numeric, and multiply the random sample by the result. Then,
 convert the logical vector to a factor, and multiply the random sample by the result.
 Lastly, convert the logical vector to a factor and then convert the result to numeric, and multiply the random sample by the result.
@@ -52,7 +56,8 @@ Lastly, convert the logical vector to a factor and then convert the result to nu
 ```{r convert_and_multiply}
 as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
 as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
-as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
+as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
+
 ```
 
 
@@ -63,4 +68,4 @@ Load the penguins data set into R.
 data("penguins", package = "palmerpenguins")
 ```
 
-
+The penguins data set consists of the following variables: `r names(penguins)`. 
