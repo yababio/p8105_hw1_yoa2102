@@ -116,7 +116,7 @@ penguins %>%
 
 #### Exporting the scatterplot
 Export scatterplot as a pdf using ggsave.
-```{r save_scatterplot }
+```{r export_scatterplot }
 ggsave("hw1_plot.pdf")
 ```
 
