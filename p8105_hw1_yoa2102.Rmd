@@ -27,6 +27,9 @@ prob1_df =
   )
 ```
 
+
+
+
 #### Means of variables in the data frame
 Take the mean of each variable in the data frame.
 ```{r mean}
@@ -37,6 +40,8 @@ mean(pull(prob1_df, factor_vec))
 ```
 
 Note that R is able to take the means of the numeric and logical vectors, but was unable to take the mean of the factor and character vectors. In the case of the logical vector, R converted "TRUE" and "FALSE" values to 0s and 1s before calculating a mean. 
+
+
 
 #### Converting data frame vectors to numeric
 Convert the logical, character, and factor vectors in the data set to numeric vectors.  
@@ -49,6 +54,9 @@ as.numeric(pull(prob1_df, factor_vec))
 R is able to convert the logical and factor vectors to numeric vectors, but was unable to do so for the character vector. As discussed earlier, R converted the logical vector to a numeric vector by changing "TRUE" and "FALSE" values to 0s and 1s. In the case of the factor vector, R assigned different numeric values (i.e. 1, 2, or 3) to the different levels of this variable. 
 
 Therefore, in order to perform a mathematical operation on a factor vector (ex. calculating a mean), one would first need to convert the factor vector to a numeric vector. In the case of a logical vector, R will automatically do the appropriate conversion and therefore no additional function (as.numeric) needs to be applied before calculating a mean. 
+
+
+
 
 #### Converting data frame vectors to logical and multiplying
 Convert the the logical vector to numeric, and multiply the random sample by the result. Then,
@@ -71,6 +79,8 @@ Load the penguins data set into R.
 data("penguins", package = "palmerpenguins")
 ```
 
+
+
 #### Describing the data set
 Familiarize yourself with the penguins data set (by using ?penguins). Describe the data set.
 
@@ -83,6 +93,8 @@ The mean bill length of penguins in this data set is `r round(mean(pull(penguins
 The mean bill depth of penguins in this data set is `r round(mean(pull(penguins, bill_depth_mm), na.rm = T), digits = 2)` mm with a standard deviation of `r round(sd(pull(penguins, bill_depth_mm), na.rm = T), digits = 2)` mm.
 
 The mean body mass of penguins in this data set is `r round(mean(pull(penguins, body_mass_g), na.rm = T), digits= 2)` g with a standard deviation of `r round(sd(pull(penguins, body_mass_g), na.rm = T), digits = 2)` g.
+
+
 
 
 #### Creating a scatterplot of the data set
@@ -102,6 +114,8 @@ penguins %>%
 print(hw1_plot)
 
 ```
+
+
 
 #### Saving the scatterplot
 Save a pdf of the scatterplot using ggsave.
