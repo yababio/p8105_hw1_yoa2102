@@ -101,7 +101,7 @@ The mean body mass of penguins in this data set is `r round(mean(pull(penguins, 
 Create a scatterplot of the penguins data set with appropriate title, axes, and color differentiation between species. 
 
 ```{r create_scatterplot}
-hw1_plot =
+
 penguins %>% 
     ggplot(aes(bill_length_mm, flipper_length_mm, color = species)) + 
     geom_point() +
@@ -110,15 +110,12 @@ penguins %>%
     ylab("Flipper Length (mm)") + 
     theme(plot.title = element_text(hjust = 0.5))
 
-
-print(hw1_plot)
-
 ```
 
 
 
-#### Saving the scatterplot
-Save a pdf of the scatterplot using ggsave.
+#### Exporting the scatterplot
+Export scatterplot as a pdf using ggsave.
 ```{r save_scatterplot }
 ggsave("hw1_plot.pdf")
 ```
