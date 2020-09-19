@@ -76,7 +76,7 @@ Familiarize yourself with the penguins data set (by using ?penguins). Describe t
 
 The penguins data set includes information (collected between 2007-2009) about size measurements for adult foraging penguins near Palmer Station, Antarctica (at any of the following islands: `r levels(pull(penguins, island))`). The data set contains `r ncol(penguins)` columns, `r nrow(penguins)` rows, and consists of the following variables: `r names(penguins)`. 
 
-The mean flipper length for penguins in this data set is `r mean(pull(penguins, flipper_length_mm), na.rm = T)` with a standard deviation of `r sd(pull(penguins, flipper_length_mm), na.rm = T)` mm. 
+The mean flipper length for penguins in this data set is `r mean(pull(penguins, flipper_length_mm), na.rm = T)` mm  with a standard deviation of `r sd(pull(penguins, flipper_length_mm), na.rm = T)` mm. 
 
 The mean bill length of penguins in this data set is `r mean(pull(penguins, bill_length_mm), na.rm = T)` mm with a standard deviation of `r sd(pull(penguins, bill_length_mm), na.rm = T)` mm.
 
