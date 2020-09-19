@@ -80,7 +80,7 @@ The penguins data set includes information about size measurements for adult for
 Create a scatterplot of the penguins data set with appropriate title, axes, and color differentiation between species. 
 
 ```{r create scatterplot}
-hw1_plot=
+hw1_plot =
 penguins %>% 
     ggplot(aes(bill_length_mm, flipper_length_mm, color = species)) + 
     geom_point() +
@@ -95,7 +95,7 @@ print(hw1_plot)
 ```
 
 
-Save a pdf of the scatterplot using ggsave
+Save a pdf of the scatterplot using ggsave.
 ```{r}
 ggsave("hw1_plot.pdf")
 ```
