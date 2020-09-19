@@ -73,13 +73,14 @@ data("penguins", package = "palmerpenguins")
 #### Describing the data set
 Familiarize yourself with the penguins data set ( by using ?penguins). Describe the data set.
 
-The penguins data set includes information about size measurements for adult foraging penguins near Palmer Station, Antartica. This data set consists of the following variables: `r names(penguins)`. The data set contains `r ncol(penguins)` columns and  `r nrow(penguins)` rows. The mean flipper length for penguins in this data set is `r mean(pull(penguins, flipper_length_mm), na.rm = T)` mm.
+The penguins data set includes information about size measurements for adult foraging penguins near Palmer Station, Antarctica. This data set consists of the following variables: `r names(penguins)`. The data set contains `r ncol(penguins)` columns and  `r nrow(penguins)` rows. The mean flipper length for penguins in this data set is `r mean(pull(penguins, flipper_length_mm), na.rm = T)` mm.
 
 
-#### Creating a scatterplot of the data set
+#### Creating and saving a scatterplot of the data set
 Create a scatterplot of the penguins data set with appropriate title, axes, and color differentiation between species. 
 
-```{r}
+```{r create scatterplot}
+hw1_plot=
 penguins %>% 
     ggplot(aes(bill_length_mm, flipper_length_mm, color = species)) + 
     geom_point() +
@@ -87,9 +88,20 @@ penguins %>%
     xlab("Bill Length (mm)") +
     ylab("Flipper Length (mm)") + 
     theme(plot.title = element_text(hjust = 0.5))
+
+
+print(hw1_plot)
+
 ```
 
 
- 
-    
+Save a pdf of the scatterplot using ggsave
+```{r}
+ggsave("hw1_plot.pdf")
+```
+
+
+
+
+
 
