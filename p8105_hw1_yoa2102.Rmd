@@ -102,13 +102,16 @@ Create a scatterplot of the penguins data set with appropriate title, axes, and 
 
 ```{r create_scatterplot}
 
-penguins %>% 
+hw1_plot = 
+  penguins %>% 
     ggplot(aes(bill_length_mm, flipper_length_mm, color = species)) + 
     geom_point() +
     ggtitle("Penguins Scatterplot") +
     xlab("Bill Length (mm)") +
     ylab("Flipper Length (mm)") + 
     theme(plot.title = element_text(hjust = 0.5))
+
+print(hw1_plot)
 
 ```
 
